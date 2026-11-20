@@ -1,0 +1,13 @@
+services:
+  minecraft-java:
+    image: itzg/minecraft-server
+    environment:
+      - "TYPE=${SERVER_TYPE}"
+      - "VERSION=${GAME_VERSION}"
+      - "EULA=true"
+      - "MEMORY=${RAM}"
+    volumes:
+      - "${DATA_VOL}:/data"
+    ports:
+      - "${SERVER_PORT}:25565"
+      - "${SVC_PORT}:24454/udp"
